@@ -3,38 +3,12 @@ package com.fan.neihan.entity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ImageEntity {
+public class ImageEntity extends TextEntity{
+
 	
-	private int type;
-	private long group_id;
-	private String content;
 	private ImageURLList largeList;
 	private ImageURLList meddleList;
-	private int comment_count;
-
-	public int getType() {
-		return type;
-	}
-
-	public void setType(int type) {
-		this.type = type;
-	}
-
-	public long getGroup_id() {
-		return group_id;
-	}
-
-	public void setGroup_id(long group_id) {
-		this.group_id = group_id;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
+	
 
 	public ImageURLList getLargeList() {
 		return largeList;
@@ -51,36 +25,33 @@ public class ImageEntity {
 	public void setMeddleList(ImageURLList meddleList) {
 		this.meddleList = meddleList;
 	}
+	
 
-	public  void parseImage(JSONObject item) throws JSONException {
-		type = item.getInt("type");
-		JSONObject group=item.getJSONObject("group");
-		setComment_count(group.getInt("comment_count"));
-		group_id = group.getLong("group_id");
-		content = group.getString("content");
+	public void parseJson(JSONObject json) throws JSONException {
+		super.parseJson(json);
+		JSONObject group = json.getJSONObject("group");
 		largeList = new ImageURLList();
-		largeList.parseURLList(group.getJSONObject("large_image"));
-		
+		largeList.parseJson(group.getJSONObject("large_image"));
 		meddleList = new ImageURLList();
-		meddleList.parseURLList(group.getJSONObject("middle_image"));
-	}
-
-
-
-	public int getComment_count() {
-		return comment_count;
-	}
-
-	public void setComment_count(int comment_count) {
-		this.comment_count = comment_count;
+		meddleList.parseJson(group.getJSONObject("middle_image"));
 	}
 
 	@Override
 	public String toString() {
-		return "ImageEntity [type=" + type + ", group_id=" + group_id
-				+ ", content=" + content + ", largeList=" + largeList
-				+ ", meddleList=" + meddleList + ", comment_count="
-				+ comment_count + "]";
+		return "ImageEntity [largeList=" + largeList + ", meddleList="
+				+ meddleList + ", type=" + type + ", createTime=" + createTime
+				+ ", onlineTime=" + onlineTime + ", favoriteCount="
+				+ favoriteCount + ", buryCount=" + buryCount + ", userBury="
+				+ userBury + ", userFavorite=" + userFavorite + ", shareUrl="
+				+ shareUrl + ", label=" + label + ", content=" + content
+				+ ", commentCount=" + commentCount + ", status=" + status
+				+ ", statusDesc=" + statusDesc + ", hasComments=" + hasComments
+				+ ", goDetailCount=" + goDetailCount + ", userDigg=" + userDigg
+				+ ", diggCount=" + diggCount + ", groupId=" + groupId
+				+ ", level=" + level + ", repinCount=" + repinCount
+				+ ", userRepin=" + userRepin + ", hasHotComments="
+				+ hasHotComments + ", categoryId=" + categoryId
+				+ ", displayTime=" + displayTime + ", user=" + user + "]";
 	}
 	
 }

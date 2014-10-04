@@ -61,7 +61,7 @@ public class ImageURLList {
 		return largeImageurlList;
 	}
 
-	public void parseURLList(JSONObject largeImage) throws JSONException {
+	public void parseJson(JSONObject largeImage) throws JSONException {
 		urlList = parseImageurlList(largeImage);
 		uri = largeImage.getString("uri");
 		width = largeImage.getString("width");
