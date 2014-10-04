@@ -30,10 +30,17 @@ public class ImageEntity extends TextEntity{
 	public void parseJson(JSONObject json) throws JSONException {
 		super.parseJson(json);
 		JSONObject group = json.getJSONObject("group");
+		JSONObject largeImageList=group.optJSONObject("large_image");
+		JSONObject meddleImageList=group.optJSONObject("middle_image");
 		largeList = new ImageURLList();
-		largeList.parseJson(group.getJSONObject("large_image"));
+		if(largeImageList==null){
+			largeList.parseJson(largeImageList);
+		}
 		meddleList = new ImageURLList();
-		meddleList.parseJson(group.getJSONObject("middle_image"));
+		if(meddleImageList==null){
+			meddleList.parseJson(meddleImageList);
+		}
+		
 	}
 
 	@Override

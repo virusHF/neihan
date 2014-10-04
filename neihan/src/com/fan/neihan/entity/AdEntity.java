@@ -194,5 +194,4 @@ public class AdEntity {
 				+ adType + ", id=" + id + ", ipaUrl=" + ipaUrl
 				+ ", displayImage=" + displayImage + "]";
 	}
-
 }
