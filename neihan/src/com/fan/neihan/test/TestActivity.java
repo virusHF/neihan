@@ -1,7 +1,7 @@
 /**
  * 测试内容在这里
  */
-package com.fan.test;
+package com.fan.neihan.test;
 
 import java.util.List;
 
@@ -108,14 +108,10 @@ public class TestActivity extends Activity implements Response.Listener<String> 
 			commenList.parseJson(object);
 			System.out.println(commenList);
 			System.out.println(commenList.getToatlNumber());
-			
 			//TODO 直接把commentlist提交给listview的adapter
-			
-
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 }

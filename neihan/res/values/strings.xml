@@ -5,5 +5,10 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="_main_tab_item_essay_text">段子</string>
+    <string name="_main_tab_item_image_text">图片</string>
+    <string name="_main_tab_item_review_text">审核</string>
+    <string name="_main_tab_item_activity_text">活动</string>
+    <string name="_main_tab_item_my_text">我的</string>
 
 </resources>

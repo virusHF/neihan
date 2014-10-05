@@ -1,16 +1,57 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    
     tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_weight="1" >
+    </FrameLayout>
 
-</RelativeLayout>
+    <RadioGroup
+        android:id="@+id/main_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#423831"
+        android:padding="5dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/essay"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_item_essay_bg"
+            android:checked="true"
+            android:text="@string/_main_tab_item_essay_text" />
+
+        <RadioButton
+             android:id="@+id/picture"
+            style="@style/main_tab_item"
+             android:drawableTop="@drawable/main_tab_item_image_bg"
+            android:text="@string/_main_tab_item_image_text" />
+
+        <RadioButton
+             android:id="@+id/review"
+           style="@style/main_tab_item"
+            android:drawableTop="@drawable/main_tab_item_review_bg"
+            android:text="@string/_main_tab_item_review_text" />
+
+        <RadioButton
+             android:id="@+id/atcivity"
+            style="@style/main_tab_item"
+             android:drawableTop="@drawable/main_tab_item_activity_bg"
+            android:text="@string/_main_tab_item_activity_text" />
+
+        <RadioButton
+             android:id="@+id/my"
+            style="@style/main_tab_item"
+             android:drawableTop="@drawable/main_tab_item_my_bg"
+            android:text="@string/_main_tab_item_my_text" />
+    </RadioGroup>
+
+</LinearLayout>
