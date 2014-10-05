@@ -3,10 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView2" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+        
+        
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/essaylist_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+        <include 
+           android:id="@+id/quick_tools_float"
+            layout="@layout/essay_head"
+            />
+       
+
+        <TextView
+            android:id="@+id/newnotify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="30条新信息" 
+            android:background="#990000FF"/>
+    </FrameLayout>
 
 </LinearLayout>

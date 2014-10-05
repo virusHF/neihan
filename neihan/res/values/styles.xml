@@ -25,7 +25,7 @@
           <item name="android:button">@null</item>
           <item name="android:gravity">center</item>
           <item name="android:textColor">@color/main_tab_item_textcolor</item>
-          
+          <item name="android:background">@null</item>
     </style>
 
 </resources>

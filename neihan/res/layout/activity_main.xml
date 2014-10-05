@@ -27,6 +27,7 @@
             style="@style/main_tab_item"
             android:drawableTop="@drawable/main_tab_item_essay_bg"
             android:checked="true"
+      
             android:text="@string/_main_tab_item_essay_text" />
 
         <RadioButton
